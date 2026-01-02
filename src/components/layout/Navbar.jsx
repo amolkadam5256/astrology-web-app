@@ -55,7 +55,7 @@ const DropdownItem = ({ item }) => {
       </Link>
 
       {hasChildren && isOpen && (
-        <div className="md:absolute bg-white dark:bg-[#0a0a0a] shadow-2xl border border-gray-200 dark:border-white/5 min-w-[220px] z-50 top-0 left-full animate-fadeIn transition-all">
+        <div className="md:absolute bg-white dark:bg-dark shadow-2xl border border-gray-200 dark:border-white/5 min-w-[220px] z-50 top-0 left-full animate-fadeIn transition-all">
           {item.children.map((child, index) => (
             <DropdownItem key={index} item={child} />
           ))}
@@ -140,7 +140,7 @@ export default function Navbar() {
       ref={navRef}
       className={`fixed top-0 left-0 right-0 z-50 transition-all duration-300 ${
         scrolled
-          ? "bg-white dark:bg-[#0a0a0a] shadow-md border-b border-gray-200 dark:border-white/5"
+          ? "bg-white dark:bg-dark shadow-md border-b border-gray-200 dark:border-white/5"
           : "bg-transparent"
       }`}
     >
@@ -149,9 +149,9 @@ export default function Navbar() {
           {/* Logo */}
           <div className="flex-shrink-0">
             <Link to="/" className="flex items-center group">
-              <span className="text-2xl font-black tracking-tight text-[#0a0a0a] dark:text-white">
+              <span className="text-2xl font-black tracking-tight text-dark dark:text-white">
                 {SITE_DATA.brand.name}
-                <span className="text-[#2262b2]">
+                <span className="text-primary">
                   {SITE_DATA.brand.highlight}
                 </span>
               </span>
@@ -171,12 +171,12 @@ export default function Navbar() {
                   to={item.path}
                   className={`px-5 h-full flex items-center text-[14px] font-bold transition-colors ${
                     scrolled
-                      ? "text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#2262b2]"
-                      : "text-[#0a0a0a] dark:text-white hover:bg-white/10"
+                      ? "text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-primary"
+                      : "text-dark dark:text-white hover:bg-white/10"
                   } ${
                     activeMenu === item.name
                       ? scrolled
-                        ? "bg-gray-50 dark:bg-white/5 text-[#2262b2]"
+                        ? "bg-gray-50 dark:bg-white/5 text-primary"
                         : "bg-white/10"
                       : ""
                   }`}
@@ -193,7 +193,7 @@ export default function Navbar() {
 
                 {/* Level 1 Dropdown */}
                 {item.children && activeMenu === item.name && (
-                  <div className="absolute top-full left-0 bg-white dark:bg-[#0a0a0a] shadow-2xl border border-gray-200 dark:border-white/5 min-w-[220px] z-50 animate-fadeIn">
+                  <div className="absolute top-full left-0 bg-white dark:bg-dark shadow-2xl border border-gray-200 dark:border-white/5 min-w-[220px] z-50 animate-fadeIn">
                     {item.children.map((child, index) => (
                       <DropdownItem key={index} item={child} />
                     ))}
@@ -210,7 +210,7 @@ export default function Navbar() {
             </div>
             <Link
               to="/contact"
-              className="px-6 py-3 bg-[#2262b2] hover:bg-[#1b4f91] text-white transition-all font-bold text-sm tracking-wide"
+              className="px-6 py-3 bg-primary hover:bg-primary-dark-1 text-white transition-all font-bold text-sm tracking-wide"
             >
               BOOK SESSION
             </Link>
@@ -221,7 +221,7 @@ export default function Navbar() {
             <ThemeToggle />
             <button
               onClick={() => setIsOpen(!isOpen)}
-              className="p-4 text-[#0a0a0a] dark:text-white"
+              className="p-4 text-dark dark:text-white"
             >
               {isOpen ? (
                 <X className="w-8 h-8" />
@@ -235,7 +235,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 top-16 bg-white dark:bg-[#0a0a0a] z-40 overflow-y-auto animate-fadeIn">
+        <div className="lg:hidden fixed inset-0 top-16 bg-white dark:bg-dark z-40 overflow-y-auto animate-fadeIn">
           <div className="border-t border-gray-100 dark:border-white/5">
             {menuItems.map((item) => (
               <div
@@ -245,7 +245,7 @@ export default function Navbar() {
                 <div className="flex items-center justify-between px-6 py-5">
                   <Link
                     to={item.path}
-                    className="text-sm font-bold text-[#0a0a0a] dark:text-white"
+                    className="text-sm font-bold text-dark dark:text-white"
                     onClick={(e) => {
                       if (!item.children) setIsOpen(false);
                       else e.preventDefault();
@@ -262,7 +262,7 @@ export default function Navbar() {
                       }
                       className={`p-2 ${
                         activeMenu === item.name
-                          ? "bg-[#2262b2] text-white"
+                          ? "bg-primary text-white"
                           : "text-gray-400"
                       }`}
                     >
@@ -280,7 +280,7 @@ export default function Navbar() {
                     {item.children.map((child, index) => (
                       <div
                         key={index}
-                        className="px-10 py-3 border-l-4 border-[#2262b2]/20"
+                        className="px-10 py-3 border-l-4 border-primary/20"
                       >
                         <div className="flex items-center justify-between">
                           <Link
@@ -300,7 +300,7 @@ export default function Navbar() {
                               <Link
                                 key={idx}
                                 to={sub.path}
-                                className="text-[14px] text-gray-500 hover:text-[#2262b2]"
+                                className="text-[14px] text-gray-500 hover:text-primary"
                                 onClick={() => setIsOpen(false)}
                               >
                                 {sub.name}
@@ -318,7 +318,7 @@ export default function Navbar() {
           <div className="p-6 space-y-4 pb-20">
             <Link
               to="/contact"
-              className="block w-full text-center py-5 bg-[#2262b2] text-white font-black tracking-widest uppercase"
+              className="block w-full text-center py-5 bg-primary text-white font-black tracking-widest uppercase"
               onClick={() => setIsOpen(false)}
             >
               BOOK SESSION
