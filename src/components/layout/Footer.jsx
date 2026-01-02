@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import {
   Facebook,
   Twitter,
@@ -11,39 +12,40 @@ import {
   ArrowRight,
   Sparkles,
 } from "lucide-react";
+import { SITE_DATA } from "../../constants/siteData";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
 
   const footerSections = [
     {
-      title: "Navigation",
+      title: "Numerology & Names",
       links: [
-        { name: "Home", path: "/" },
-        { name: "About Us", path: "/about" },
-        { name: "Our Blog", path: "/blog" },
-        { name: "Contact Us", path: "/contact" },
-        { name: "Book a Session", path: "/booking" },
+        { name: "What is Numerology?", path: "/numerology/intro" },
+        { name: "Life Path & Destiny", path: "/numerology/life-path" },
+        { name: "Name Correction", path: "/numerology/name" },
+        { name: "Baby Numerology", path: "/numerology/baby-name" },
+        { name: "Lucky Numbers & Dates", path: "/numerology/lucky-dates" },
       ],
     },
     {
-      title: "Services",
+      title: "Spiritual Healing",
       links: [
-        { name: "Personal Consultation", path: "/services/consultation" },
-        { name: "Marriage Astrology", path: "/services/marriage" },
-        { name: "Career Guidance", path: "/services/career" },
-        { name: "Vastu Shastra", path: "/services/vastu" },
-        { name: "Kundli Analysis", path: "/services/kundli" },
+        { name: "Angel Card Reading", path: "/services/angel-cards" },
+        { name: "Soul Path / Career", path: "/services/soul-path" },
+        { name: "Relationship Healing", path: "/services/relationship" },
+        { name: "Past Life Healing", path: "/services/past-life" },
+        { name: "BRAVE Success Program", path: "/services/brave" },
       ],
     },
     {
-      title: "Popular Signs",
+      title: "Vastu & Property",
       links: [
-        { name: "Aries Horoscope", path: "/horoscope/aries" },
-        { name: "Leo Horoscope", path: "/horoscope/leo" },
-        { name: "Scorpio Horoscope", path: "/horoscope/scorpio" },
-        { name: "Pisces Horoscope", path: "/horoscope/pisces" },
-        { name: "All Zodiac Signs", path: "/zodiac" },
+        { name: "Vastu for Office", path: "/services/vastu-office" },
+        { name: "Vastu for Home", path: "/services/vastu-home" },
+        { name: "Vehicle Numerology", path: "/numerology/property" },
+        { name: "Flat Numerology", path: "/numerology/flat" },
+        { name: "Business Numerology", path: "/numerology/business" },
       ],
     },
   ];
@@ -57,18 +59,19 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-10">
           {/* Brand Column */}
-          <div className="lg:col-span-2 space-y-6">
+          <div className="lg:col-span-2 space-y-6" data-aos="fade-right">
             <div className="group inline-block">
               <span className="text-3xl font-black tracking-tighter text-[#0a0a0a] dark:text-white">
-                Astro<span className="text-[#2262b2]">Guide</span>
+                {SITE_DATA.brand.name}
+                <span className="text-[#2262b2]">
+                  {SITE_DATA.brand.highlight}
+                </span>
               </span>
               <div className="w-12 h-1 bg-[#2262b2] mt-1 group-hover:w-full transition-all duration-500"></div>
             </div>
 
             <p className="text-gray-600 dark:text-gray-400 text-[14px] leading-relaxed max-w-md font-medium">
-              Empowering your journey through celestial wisdom. We provide
-              ancient Vedic insights for the modern world to help you navigate
-              life's most important decisions.
+              {SITE_DATA.brand.tagline}
             </p>
 
             <div className="space-y-4">
@@ -78,10 +81,10 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-widest font-black text-gray-400">
-                    Email Us
+                    {SITE_DATA.contact.emailLabel}
                   </p>
                   <p className="font-bold dark:text-gray-200 text-gray-800 text-[14px]">
-                    contact@astroguide.com
+                    {SITE_DATA.contact.email}
                   </p>
                 </div>
               </div>
@@ -92,10 +95,10 @@ const Footer = () => {
                 </div>
                 <div>
                   <p className="text-[10px] uppercase tracking-widest font-black text-gray-400">
-                    Call Support
+                    {SITE_DATA.contact.supportLabel}
                   </p>
                   <p className="font-bold dark:text-gray-200 text-gray-800 text-[14px]">
-                    +1 (800) ASTRO-GUIDE
+                    {SITE_DATA.contact.phone}
                   </p>
                 </div>
               </div>
@@ -111,13 +114,13 @@ const Footer = () => {
               <ul className="space-y-4">
                 {section.links.map((link) => (
                   <li key={link.name}>
-                    <a
-                      href={link.path}
-                      className="group flex items-center text-gray-500 dark:text-gray-400 hover:text-[#2262b2] dark:hover:text-white transition-colors text-[13px] font-bold"
+                    <Link
+                      to={link.path}
+                      className="text-gray-500 dark:text-gray-400 hover:text-[#2262b2] dark:hover:text-[#2262b2] transition-colors flex items-center group/link"
                     >
-                      <ArrowRight className="w-0 h-4 mr-0 group-hover:w-4 group-hover:mr-2 transition-all duration-300 opacity-0 group-hover:opacity-100" />
+                      <ArrowRight className="w-3 h-3 mr-2 opacity-0 -ml-5 group-hover/link:opacity-100 group-hover/link:ml-0 transition-all" />
                       {link.name}
-                    </a>
+                    </Link>
                   </li>
                 ))}
               </ul>
@@ -148,28 +151,40 @@ const Footer = () => {
 
             {/* Social Icons */}
             <div className="flex items-center space-x-4">
-              {[
-                { icon: Facebook, label: "Facebook" },
-                { icon: Twitter, label: "Twitter" },
-                { icon: Instagram, label: "Instagram" },
-                { icon: Youtube, label: "Youtube" },
-              ].map((social) => (
-                <a
-                  key={social.label}
-                  href="#"
-                  className="w-12 h-12 flex items-center justify-center bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-400 hover:text-[#2262b2] hover:border-[#2262b2] transition-all duration-300"
-                  aria-label={social.label}
-                >
-                  <social.icon className="w-5 h-5" />
-                </a>
-              ))}
+              {SITE_DATA.socials.map((social) => {
+                const Icon = {
+                  Facebook: Facebook,
+                  Twitter: Twitter,
+                  Instagram: Instagram,
+                  Youtube: Youtube,
+                }[social.name];
+
+                return (
+                  <a
+                    key={social.name}
+                    href={social.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-12 h-12 flex items-center justify-center bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-400 hover:text-[#2262b2] hover:border-[#2262b2] transition-all duration-300"
+                    aria-label={social.name}
+                  >
+                    <Icon className="w-5 h-5" />
+                  </a>
+                );
+              })}
             </div>
           </div>
 
           {/* Copyright */}
           <div className="mt-8 flex flex-col md:flex-row justify-between items-center text-[11px] font-black text-gray-400 uppercase tracking-[0.2em] gap-5 text-center">
             <p>
-              © {currentYear} Astro<span className="text-[#2262b2]">Guide</span>{" "}
+              © {currentYear}{" "}
+              <Link to="/" className="hover:text-[#2262b2] transition-colors">
+                {SITE_DATA.brand.name}
+                <span className="text-[#2262b2]">
+                  {SITE_DATA.brand.highlight}
+                </span>
+              </Link>{" "}
               Cosmic Portal. All Celestial rights reserved.
             </p>
             <div className="flex items-center space-x-10">

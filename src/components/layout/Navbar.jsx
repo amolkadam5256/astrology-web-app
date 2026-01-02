@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { Link, useLocation } from "react-router-dom";
 import {
   Menu,
   X,
@@ -8,6 +9,7 @@ import {
   Calendar,
 } from "lucide-react";
 import ThemeToggle from "../common/ThemeToggle";
+import { SITE_DATA } from "../../constants/siteData";
 
 const DropdownItem = ({ item }) => {
   const [isOpen, setIsOpen] = useState(false);
@@ -31,8 +33,8 @@ const DropdownItem = ({ item }) => {
       onMouseEnter={handleMouseEnter}
       onMouseLeave={handleMouseLeave}
     >
-      <a
-        href={item.path}
+      <Link
+        to={item.path}
         className={`w-full flex items-center justify-between px-5 py-3.5 text-[13px] font-bold transition-all text-left ${
           isOpen
             ? "bg-[#2262b2] text-white"
@@ -50,7 +52,7 @@ const DropdownItem = ({ item }) => {
             }`}
           />
         )}
-      </a>
+      </Link>
 
       {hasChildren && isOpen && (
         <div className="md:absolute bg-white dark:bg-[#0a0a0a] shadow-2xl border border-gray-200 dark:border-white/5 min-w-[220px] z-50 top-0 left-full animate-fadeIn transition-all">
@@ -91,42 +93,40 @@ export default function Navbar() {
     { name: "Home", path: "/" },
     { name: "About", path: "/about" },
     {
-      name: "Services",
-      path: "/services",
+      name: "Numerology",
+      path: "/numerology",
       children: [
         {
-          name: "Consultations",
+          name: "Core Analysis",
           children: [
-            { name: "Personal Consultation", path: "/services/consultation" },
-            { name: "Marriage Astrology", path: "/services/marriage" },
-            { name: "Career Astrology", path: "/services/career" },
-            { name: "Vastu Consultation", path: "/services/vastu" },
+            { name: "What is Numerology?", path: "/numerology/intro" },
+            { name: "Life Path & Destiny", path: "/numerology/life-path" },
+            { name: "Personality Traits", path: "/numerology/personality" },
           ],
         },
         {
-          name: "Horoscope Readings",
+          name: "Name Services",
           children: [
-            { name: "Daily Horoscope", path: "/horoscope/daily" },
-            { name: "Weekly Horoscope", path: "/horoscope/weekly" },
-            { name: "Monthly Horoscope", path: "/horoscope/monthly" },
-            { name: "Yearly Horoscope", path: "/horoscope/yearly" },
+            { name: "Name Correction", path: "/numerology/name" },
+            { name: "Baby Name Numerology", path: "/numerology/baby-name" },
+            { name: "Business Name Numerology", path: "/numerology/business" },
           ],
         },
         {
-          name: "Zodiac Insights",
+          name: "Spiritual Guidance",
           children: [
-            { name: "All Zodiac Signs", path: "/zodiac" },
-            { name: "Aries - Virgo", path: "/zodiac/group1" },
-            { name: "Libra - Pisces", path: "/zodiac/group2" },
-            { name: "Sign Compatibility", path: "/zodiac/compatibility" },
+            { name: "Angel Card Reading", path: "/services/angel-cards" },
+            { name: "Soul Path / Career", path: "/services/soul-path" },
+            { name: "BRAVE Success Program", path: "/services/brave" },
+            { name: "Healing Services", path: "/services/healing" },
           ],
         },
         {
-          name: "Spiritual Analysis",
+          name: "Vastu & Planning",
           children: [
-            { name: "Kundli Analysis", path: "/services/kundli" },
-            { name: "Numerology Reading", path: "/services/numerology" },
-            { name: "Gemstone Recommendation", path: "/services/gemstone" },
+            { name: "Vastu For Office", path: "/services/vastu-office" },
+            { name: "Lucky Numbers & Dates", path: "/numerology/lucky-dates" },
+            { name: "Vehicle/Flat Numerology", path: "/numerology/property" },
           ],
         },
       ],
@@ -145,14 +145,17 @@ export default function Navbar() {
       }`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="flex justify-between items-center h-20">
+        <div className="flex justify-between items-center h-16">
           {/* Logo */}
           <div className="flex-shrink-0">
-            <a href="/" className="flex items-center group">
+            <Link to="/" className="flex items-center group">
               <span className="text-2xl font-black tracking-tight text-[#0a0a0a] dark:text-white">
-                Astro<span className="text-[#2262b2]">Guide</span>
+                {SITE_DATA.brand.name}
+                <span className="text-[#2262b2]">
+                  {SITE_DATA.brand.highlight}
+                </span>
               </span>
-            </a>
+            </Link>
           </div>
 
           {/* Desktop Menu */}
@@ -164,8 +167,8 @@ export default function Navbar() {
                 onMouseEnter={() => setActiveMenu(item.name)}
                 onMouseLeave={() => setActiveMenu(null)}
               >
-                <a
-                  href={item.path}
+                <Link
+                  to={item.path}
                   className={`px-5 h-full flex items-center text-[14px] font-bold transition-colors ${
                     scrolled
                       ? "text-gray-700 dark:text-gray-200 hover:bg-gray-50 dark:hover:bg-white/5 hover:text-[#2262b2]"
@@ -186,7 +189,7 @@ export default function Navbar() {
                       }`}
                     />
                   )}
-                </a>
+                </Link>
 
                 {/* Level 1 Dropdown */}
                 {item.children && activeMenu === item.name && (
@@ -205,12 +208,12 @@ export default function Navbar() {
             <div className="px-2">
               <ThemeToggle />
             </div>
-            <a
-              href="/booking"
+            <Link
+              to="/contact"
               className="px-6 py-3 bg-[#2262b2] hover:bg-[#1b4f91] text-white transition-all font-bold text-sm tracking-wide"
             >
               BOOK SESSION
-            </a>
+            </Link>
           </div>
 
           {/* Mobile Button */}
@@ -232,7 +235,7 @@ export default function Navbar() {
 
       {/* Mobile Menu */}
       {isOpen && (
-        <div className="lg:hidden fixed inset-0 top-20 bg-white dark:bg-[#0a0a0a] z-40 overflow-y-auto animate-fadeIn">
+        <div className="lg:hidden fixed inset-0 top-16 bg-white dark:bg-[#0a0a0a] z-40 overflow-y-auto animate-fadeIn">
           <div className="border-t border-gray-100 dark:border-white/5">
             {menuItems.map((item) => (
               <div
@@ -240,8 +243,8 @@ export default function Navbar() {
                 className="border-b border-gray-100 dark:border-white/5"
               >
                 <div className="flex items-center justify-between px-6 py-5">
-                  <a
-                    href={item.path}
+                  <Link
+                    to={item.path}
                     className="text-sm font-bold text-[#0a0a0a] dark:text-white"
                     onClick={(e) => {
                       if (!item.children) setIsOpen(false);
@@ -249,7 +252,7 @@ export default function Navbar() {
                     }}
                   >
                     {item.name}
-                  </a>
+                  </Link>
                   {item.children && (
                     <button
                       onClick={() =>
@@ -280,13 +283,13 @@ export default function Navbar() {
                         className="px-10 py-3 border-l-4 border-[#2262b2]/20"
                       >
                         <div className="flex items-center justify-between">
-                          <a
-                            href={child.path}
+                          <Link
+                            to={child.path}
                             className="font-semibold text-gray-600 dark:text-gray-400"
                             onClick={() => !child.children && setIsOpen(false)}
                           >
                             {child.name}
-                          </a>
+                          </Link>
                           {child.children && (
                             <ChevronDown className="w-4 h-4 text-gray-400" />
                           )}
@@ -294,14 +297,14 @@ export default function Navbar() {
                         {child.children && (
                           <div className="mt-3 ml-4 flex flex-col space-y-3">
                             {child.children.map((sub, idx) => (
-                              <a
+                              <Link
                                 key={idx}
-                                href={sub.path}
+                                to={sub.path}
                                 className="text-[14px] text-gray-500 hover:text-[#2262b2]"
                                 onClick={() => setIsOpen(false)}
                               >
                                 {sub.name}
-                              </a>
+                              </Link>
                             ))}
                           </div>
                         )}
@@ -313,12 +316,13 @@ export default function Navbar() {
             ))}
           </div>
           <div className="p-6 space-y-4 pb-20">
-            <a
-              href="/booking"
+            <Link
+              to="/contact"
               className="block w-full text-center py-5 bg-[#2262b2] text-white font-black tracking-widest uppercase"
+              onClick={() => setIsOpen(false)}
             >
               BOOK SESSION
-            </a>
+            </Link>
           </div>
         </div>
       )}

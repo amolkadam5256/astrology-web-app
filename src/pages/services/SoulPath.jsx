@@ -1,0 +1,50 @@
+import React from "react";
+import MainLayout from "../../components/layout/MainLayout";
+
+const SoulPath = () => {
+  return (
+    <MainLayout title="Soul Path & Career">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20">
+        <div className="flex flex-col md:flex-row gap-16 items-center">
+          <div className="w-full md:w-1/2" data-aos="fade-right">
+            <h1 className="text-4xl md:text-5xl font-black text-[#0a0a0a] dark:text-white uppercase mb-8">
+              Your Soul's <span className="text-[#2262b2]">Vocation</span>
+            </h1>
+            <p className="text-lg text-gray-600 dark:text-gray-400 mb-8 leading-relaxed">
+              Unlock the professional path that aligns with your spiritual
+              purpose. We help you choose a career that not only brings
+              financial success but also matches your internal frequency.
+            </p>
+            <div className="grid grid-cols-2 gap-4">
+              {[
+                "Career Mapping",
+                "Soul Calling",
+                "Skill Alignment",
+                "Growth Strategy",
+              ].map((p, i) => (
+                <div
+                  key={i}
+                  className="p-4 bg-gray-50 dark:bg-white/5 font-black uppercase text-[10px] tracking-widest text-[#2262b2] border border-gray-100 dark:border-white/10 text-center"
+                >
+                  {p}
+                </div>
+              ))}
+            </div>
+          </div>
+          <div className="w-full md:w-1/2 relative" data-aos="fade-left">
+            <div className="aspect-4/5 bg-gray-100 dark:bg-white/5 rounded-3xl overflow-hidden relative">
+              <div className="absolute inset-0 bg-linear-to-tr from-[#2262b2] to-transparent opacity-20"></div>
+              <div className="absolute inset-0 flex items-center justify-center p-12">
+                <div className="w-full h-1 bg-gray-300 dark:bg-gray-700 relative">
+                  <div className="absolute left-1/2 -ml-4 -mt-4 w-8 h-8 bg-[#2262b2] rounded-full shadow-[0_0_20px_#2262b2] animate-ping"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </MainLayout>
+  );
+};
+
+export default SoulPath;

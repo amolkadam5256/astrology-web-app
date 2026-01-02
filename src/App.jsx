@@ -1,20 +1,60 @@
 import React from "react";
-import MainLayout from "./components/layout/MainLayout";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./App.css";
+
+// General Pages
+import Home from "./pages/Home";
+import About from "./pages/About";
+import Blog from "./pages/Blog";
+import Contact from "./pages/Contact";
+import NumerologyMain from "./pages/Numerology"; // Existing general numerology page
+
+// Numerology Sub-pages
+import NumerologyIntro from "./pages/numerology/Intro";
+import LifePath from "./pages/numerology/LifePath";
+import Personality from "./pages/numerology/Personality";
+import NameCorrection from "./pages/numerology/NameCorrection";
+import BabyName from "./pages/numerology/BabyName";
+import BusinessName from "./pages/numerology/BusinessName";
+import LuckyDates from "./pages/numerology/LuckyDates";
+import Property from "./pages/numerology/Property";
+
+// Services Sub-pages
+import AngelCards from "./pages/services/AngelCards";
+import SoulPath from "./pages/services/SoulPath";
+import BraveProgram from "./pages/services/BraveProgram";
+import Healing from "./pages/services/Healing";
+import VastuOffice from "./pages/services/VastuOffice";
 
 const App = () => {
   return (
-    <MainLayout>
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <h1 className="text-4xl font-extrabold text-[#0a0a0a] dark:text-white mb-6">
-          Welcome to AstroGuide
-        </h1>
-        <p className="text-lg text-gray-600 dark:text-gray-400">
-          Your personal guide to the stars. Explore our services and discover
-          what the cosmos has in store for you.
-        </p>
-      </div>
-    </MainLayout>
+    <Router>
+      <Routes>
+        {/* Main Routes */}
+        <Route path="/" element={<Home />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/contact" element={<Contact />} />
+
+        {/* Numerology Routes */}
+        <Route path="/numerology" element={<NumerologyMain />} />
+        <Route path="/numerology/intro" element={<NumerologyIntro />} />
+        <Route path="/numerology/life-path" element={<LifePath />} />
+        <Route path="/numerology/personality" element={<Personality />} />
+        <Route path="/numerology/name" element={<NameCorrection />} />
+        <Route path="/numerology/baby-name" element={<BabyName />} />
+        <Route path="/numerology/business" element={<BusinessName />} />
+        <Route path="/numerology/lucky-dates" element={<LuckyDates />} />
+        <Route path="/numerology/property" element={<Property />} />
+
+        {/* Services Routes */}
+        <Route path="/services/angel-cards" element={<AngelCards />} />
+        <Route path="/services/soul-path" element={<SoulPath />} />
+        <Route path="/services/brave" element={<BraveProgram />} />
+        <Route path="/services/healing" element={<Healing />} />
+        <Route path="/services/vastu-office" element={<VastuOffice />} />
+      </Routes>
+    </Router>
   );
 };
 
