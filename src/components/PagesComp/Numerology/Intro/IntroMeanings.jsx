@@ -26,10 +26,10 @@ const IntroMeanings = () => {
   ];
 
   return (
-    <section className="py-20 bg-gray-50 dark:bg-[#0a0a0a]">
+    <section className="py-20 bg-gray-50 dark:bg-[var(--color-dark)]">
       <div className="max-w-4xl mx-auto px-4">
         <div className="text-center mb-12">
-          <h2 className="text-2xl md:text-3xl font-black text-[#0a0a0a] dark:text-white uppercase mb-4">
+          <h2 className="text-2xl md:text-3xl font-black text-[var(--color-dark)] dark:text-white uppercase mb-4">
             Number Meanings
           </h2>
           <p className="text-gray-500 text-xs tracking-widest uppercase">
@@ -40,7 +40,7 @@ const IntroMeanings = () => {
         <div className="overflow-hidden rounded-xl border border-gray-100 dark:border-white/5 shadow-lg bg-white dark:bg-[#0d1117]">
           <table className="w-full text-left border-collapse">
             <thead>
-              <tr className="bg-[#2262b2] text-white uppercase text-[10px] font-black tracking-widest">
+              <tr className="bg-[var(--color-primary)] text-white uppercase text-[10px] font-black tracking-widest">
                 <th className="px-6 py-4">Number</th>
                 <th className="px-6 py-4">Meaning / Traits</th>
               </tr>
@@ -51,7 +51,7 @@ const IntroMeanings = () => {
                   key={i}
                   className="border-b last:border-0 border-gray-100 dark:border-white/5 hover:bg-gray-50 dark:hover:bg-white/5 transition-colors"
                 >
-                  <td className="px-6 py-3 font-black text-[#2262b2]">
+                  <td className="px-6 py-3 font-black text-[var(--color-primary)]">
                     {item.num}
                   </td>
                   <td className="px-6 py-3 text-gray-600 dark:text-gray-400 font-medium">

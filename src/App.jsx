@@ -1,5 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import WhatsAppFloating from "./components/common/WhatsAppFloating";
 
 // General Pages
 import Home from "./pages/Home";
@@ -24,6 +25,9 @@ import SoulPath from "./pages/services/SoulPath";
 import BraveProgram from "./pages/services/BraveProgram";
 import Healing from "./pages/services/Healing";
 import VastuOffice from "./pages/services/VastuOffice";
+
+// Error Page
+import ErrorPage from "./components/common/ErrorPage";
 
 const App = () => {
   return (
@@ -52,7 +56,9 @@ const App = () => {
         <Route path="/services/brave" element={<BraveProgram />} />
         <Route path="/services/healing" element={<Healing />} />
         <Route path="/services/vastu-office" element={<VastuOffice />} />
+        <Route path="*" element={<ErrorPage />} />
       </Routes>
+      <WhatsAppFloating />
     </Router>
   );
 };

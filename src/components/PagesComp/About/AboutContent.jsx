@@ -3,8 +3,8 @@ import React from "react";
 const AboutContent = () => {
   return (
     <div className="space-y-8" data-aos="fade-right">
-      <h2 className="text-4xl font-black text-[#0a0a0a] dark:text-white uppercase tracking-tighter">
-        The Wisdom Behind <span className="text-[#2262b2]">AstroGuide</span>
+      <h2 className="text-4xl font-black text-[var(--color-dark)] dark:text-white uppercase tracking-tighter">
+        The Wisdom Behind <span className="text-[var(--color-primary)]">AstroGuide</span>
       </h2>
       <p className="text-lg text-gray-600 dark:text-gray-400 font-medium italic">
         "Numbers are the highest degree of knowledge. It is knowledge itself." —
@@ -25,8 +25,8 @@ const AboutContent = () => {
         </p>
       </div>
       <div className="pt-4" data-aos="zoom-in" data-aos-delay="400">
-        <div className="border-l-4 border-[#2262b2] pl-6 py-2">
-          <p className="font-black text-[#0a0a0a] dark:text-white uppercase tracking-widest text-sm">
+        <div className="border-l-4 border-[var(--color-primary)] pl-6 py-2">
+          <p className="font-black text-[var(--color-dark)] dark:text-white uppercase tracking-widest text-sm">
             Founded in 1977
           </p>
           <p className="text-gray-500 dark:text-gray-400 text-sm">

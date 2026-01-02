@@ -31,9 +31,9 @@ const VastuGrid = () => {
           key={i}
           data-aos={card.side}
           data-aos-delay={i * 200}
-          className="p-12 bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-[2rem] group hover:bg-[#2262b2] transition-all"
+          className="p-12 bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-[2rem] group hover:bg-[var(--color-primary)] transition-all"
         >
-          <h3 className="text-2xl font-black text-[#0a0a0a] dark:text-white mb-4 group-hover:text-white uppercase">
+          <h3 className="text-2xl font-black text-[var(--color-dark)] dark:text-white mb-4 group-hover:text-white uppercase">
             {card.title}
           </h3>
           <p className="font-medium text-gray-500 dark:text-gray-400 group-hover:text-white/80 leading-relaxed">

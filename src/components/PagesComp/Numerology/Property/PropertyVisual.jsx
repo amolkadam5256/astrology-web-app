@@ -4,10 +4,10 @@ import { Key } from "lucide-react";
 const PropertyVisual = () => {
   return (
     <div className="relative group" data-aos="fade-left">
-      <div className="aspect-video sm:aspect-square bg-[#0a0a0a] rounded-[50px] flex items-center justify-center p-12 overflow-hidden shadow-2xl">
-        <div className="absolute inset-0 bg-radial-[circle_at_20%_20%] from-[#2262b2]/20 to-transparent"></div>
+      <div className="aspect-video sm:aspect-square bg-[var(--color-dark)] rounded-[50px] flex items-center justify-center p-12 overflow-hidden shadow-2xl">
+        <div className="absolute inset-0 bg-radial-[circle_at_20%_20%] from-[var(--color-primary)]/20 to-transparent"></div>
         <div className="relative z-10 text-center space-y-6">
-          <div className="inline-block p-6 border-2 border-white/10 rounded-full animate-pulse group-hover:border-[#ff7e33]/50 transition-colors">
+          <div className="inline-block p-6 border-2 border-white/10 rounded-full animate-pulse group-hover:border-[var(--color-secondary)]/50 transition-colors">
             <Key size={40} className="text-white opacity-80" />
           </div>
           <h4 className="text-white text-xl sm:text-2xl font-black uppercase tracking-tighter">
@@ -19,7 +19,7 @@ const PropertyVisual = () => {
         </div>
       </div>
       {/* Decorative element */}
-      <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-[#ff7e33] rounded-full blur-3xl opacity-20"></div>
+      <div className="absolute -bottom-6 -left-6 w-24 h-24 bg-[var(--color-secondary)] rounded-full blur-3xl opacity-20"></div>
     </div>
   );
 };

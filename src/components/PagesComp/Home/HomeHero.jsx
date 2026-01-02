@@ -4,7 +4,7 @@ import { MousePointer2, Sparkles, Star, Moon, Sun } from "lucide-react";
 
 /**
  * HomeHero - A creative, highly responsive, and interactive hero section.
- * Features parallax effects, dynamic star fields, and a rotating zodiac wheel.
+ * Features parallax effects, dynamic star fields, and a rotating Numerology Circle Chart and Zodiac Energy Wheel.
  */
 const HomeHero = () => {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
@@ -89,9 +89,12 @@ const HomeHero = () => {
               data-aos="fade-down"
               className="inline-flex items-center space-x-3 px-4 py-2 bg-white/5 border border-white/10 rounded-full backdrop-blur-xl group hover:bg-white/10 transition-all cursor-default"
             >
-              <Sparkles size={14} className="text-[#ff7e33] animate-pulse" />
-              <span className="text-[#ff7e33] font-bold uppercase tracking-[0.4em] text-[10px] sm:text-xs">
-                Celestial Guidance Daily
+              <Sparkles
+                size={14}
+                className="text-[var(--color-primary)] animate-pulse"
+              />
+              <span className="text-[var(--color-primary)] font-bold uppercase tracking-[0.4em] text-[10px] sm:text-xs">
+                Ancient Numerology • Modern Insight
               </span>
             </div>
 
@@ -104,7 +107,7 @@ const HomeHero = () => {
               >
                 <div className="w-12 h-px bg-white/30 hidden sm:block"></div>
                 <h4 className="text-white/80 font-bold text-sm sm:text-base tracking-[0.3em] uppercase">
-                  Unveil Your Destiny
+                  Decode Your Life Numbers
                 </h4>
               </div>
 
@@ -113,12 +116,13 @@ const HomeHero = () => {
                 data-aos="fade-up"
                 data-aos-delay="200"
               >
-                Read Your <br />
+                Discover Your
+                <br />
                 <span className="relative inline-block overflow-hidden lg:overflow-visible group pb-2">
-                  <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-white via-white/90 to-[#ff7e33]/70 drop-shadow-sm transition-transform duration-500 inline-block ">
-                    Daily Horoscope
+                  <span className="relative z-10 text-transparent bg-clip-text bg-linear-to-r from-white via-white/90 to-[var(--color-primary)]/70 drop-shadow-sm transition-transform duration-500 inline-block ">
+                    Numerology Destiny
                   </span>
-                  <div className="absolute bottom-0 left-0 w-full h-1 bg-[#ff7e33] rounded-full scale-x-50 origin-left group-hover:scale-x-100 transition-transform duration-700"></div>
+                  <div className="absolute bottom-0 left-0 w-full h-1 bg-[var(--color-primary)] rounded-full scale-x-50 origin-left group-hover:scale-x-100 transition-transform duration-700"></div>
                 </span>
                 <br />
                 Today
@@ -130,13 +134,13 @@ const HomeHero = () => {
               data-aos-delay="300"
               className="text-gray-400 text-base sm:text-sm md:text-lg max-w-xl leading-relaxed font-medium"
             >
-              Step into the cosmic stream where ancient wisdom meets current
-              planetary alignments.
+              Step into the science of numbers where ancient numerology reveals
+              your life path, soul purpose, and hidden strengths.
               <span className="text-white/90 font-bold">
                 {" "}
                 Precise. Personal. Powerful.
               </span>
-              Your roadmap through the stars starts here.
+              Your journey to clarity and success begins here.
             </p>
 
             {/* Buttons with Hover Interaction */}
@@ -145,9 +149,9 @@ const HomeHero = () => {
               data-aos-delay="400"
               className="flex flex-col sm:flex-row gap-5 pt-6"
             >
-              <button className="group relative px-10 py-5 bg-[#ff7e33] text-white font-black uppercase tracking-[0.2em] text-[11px] sm:text-xs hover:shadow-[0_0_50px_rgba(255,126,51,0.4)] transition-all overflow-hidden active:scale-95">
+              <button className="group relative px-10 py-5 bg-[var(--color-primary)] text-white font-black uppercase tracking-[0.2em] text-[11px] sm:text-xs hover:shadow-[0_0_50px_rgba(var(--color-primary),0.4)] transition-all overflow-hidden active:scale-95">
                 <span className="relative z-10 flex items-center justify-center">
-                  Get Free Reading{" "}
+                  Get Free Numerology Chart{" "}
                   <MousePointer2 className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                 </span>
                 <div className="absolute inset-0 bg-white/20 -translate-x-full group-hover:translate-x-full transition-transform duration-700 skew-x-12"></div>
@@ -186,28 +190,17 @@ const HomeHero = () => {
                 <Sun size={28} />
               </div>
 
-              {/* The Rotating Zodiac Wheel */}
-              <div className="w-full h-full animate-[spin_100s_linear_infinite] will-change-transform filter drop-shadow-[0_0_40px_rgba(34,98,178,0.3)] transition-all duration-700 hover:scale-[1.05] hover:brightness-125">
+              {/* The Rotating Numerology Circle Chart and Zodiac Energy Wheel */}
+              <div className="w-full h-full flex items-center justify-center animate-[spin_100s_linear_infinite] will-change-transform filter drop-shadow-[0_0_40px_rgba(var(--color-primary),0.3)] transition-all duration-700 hover:scale-[1.01] hover:brightness-125">
                 <img
                   src={images.hero.zodiacWheel}
-                  alt="Zodiac Wheel"
-                  className="w-full h-full object-contain"
+                  alt="Numerology Circle Chart and Zodiac Energy Wheel"
+                  className="w-3/4 h-3/4 object-contain"
                 />
               </div>
 
               {/* Interactive Scan Line */}
-              <div className="absolute inset-0 bg-conic-[#ff7e33]/10 to-transparent rounded-full animate-[spin_6s_linear_infinite] pointer-events-none"></div>
-            </div>
-
-            {/* Center Eye / Sun Core */}
-            <div className="absolute w-24 h-24 bg-[#050a15] rounded-full border border-white/20 flex items-center justify-center shadow-[0_0_50px_rgba(0,0,0,0.7)] group">
-              <div className="absolute inset-0 bg-[#ff7e33]/5 animate-pulse rounded-full"></div>
-              <div className="w-16 h-16 border border-[#ff7e33]/40 rounded-full animate-ping opacity-30"></div>
-              <Star
-                size={32}
-                className="text-[#ff7e33] animate-spin-slow drop-shadow-[0_0_10px_rgba(255,126,51,0.5)]"
-              />
-              <div className="absolute inset-0 border-2 border-white/5 rounded-full"></div>
+              <div className="absolute inset-0 bg-conic-[var(--color-primary)]/10 to-transparent rounded-full animate-[spin_6s_linear_infinite] pointer-events-none"></div>
             </div>
           </div>
         </div>

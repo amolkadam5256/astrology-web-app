@@ -8,7 +8,7 @@ const AngelCardsDisplay = () => {
           key={i}
           data-aos="flip-left"
           data-aos-delay={i * 200}
-          className="w-40 h-64 bg-[#2262b2]/5 border-2 border-[#2262b2]/20 rounded-xl flex items-center justify-center group hover:bg-[#2262b2] transition-all cursor-pointer"
+          className="w-40 h-64 bg-[var(--color-primary)]/5 border-2 border-[var(--color-primary)]/20 rounded-xl flex items-center justify-center group hover:bg-[var(--color-primary)] transition-all cursor-pointer"
         >
           <span className="text-4xl group-hover:scale-150 transition-transform">
             🔱

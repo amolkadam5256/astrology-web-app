@@ -3,13 +3,13 @@ import { Footprints, Target, Heart, Compass } from "lucide-react";
 
 const DestinyCard = ({ icon, title, subtitle, desc }) => (
   <div className="p-8 bg-gray-50 dark:bg-white/5 rounded-3xl border border-gray-100 dark:border-white/10 hover:shadow-xl transition-all group active:scale-95">
-    <div className="text-[#2262b2] mb-6 group-hover:scale-110 transition-transform origin-left">
+    <div className="text-[var(--color-primary)] mb-6 group-hover:scale-110 transition-transform origin-left">
       {icon}
     </div>
-    <p className="text-[10px] uppercase font-black tracking-widest text-[#ff7e33] mb-1">
+    <p className="text-[10px] uppercase font-black tracking-widest text-[var(--color-secondary)] mb-1">
       {subtitle}
     </p>
-    <h3 className="text-lg font-black text-[#0a0a0a] dark:text-white uppercase mb-4">
+    <h3 className="text-lg font-black text-[var(--color-dark)] dark:text-white uppercase mb-4">
       {title}
     </h3>
     <p className="text-xs sm:text-sm text-gray-500 leading-relaxed font-medium">

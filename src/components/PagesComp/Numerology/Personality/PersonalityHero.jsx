@@ -4,10 +4,10 @@ import { User, Heart, Sparkles, Star, Brain } from "lucide-react";
 const TraitMiniCard = ({ icon, title, desc }) => (
   <div className="p-4 bg-white dark:bg-black/20 border border-gray-100 dark:border-white/5 rounded-xl hover:bg-gray-50 dark:hover:bg-black/40 transition-colors group">
     <div className="flex items-center space-x-3 mb-2">
-      <div className="text-[#ff7e33] group-hover:rotate-12 transition-transform">
+      <div className="text-[var(--color-secondary)] group-hover:rotate-12 transition-transform">
         {icon}
       </div>
-      <h5 className="text-[11px] font-black uppercase tracking-widest text-[#0a0a0a] dark:text-white">
+      <h5 className="text-[11px] font-black uppercase tracking-widest text-[var(--color-dark)] dark:text-white">
         {title}
       </h5>
     </div>
@@ -24,11 +24,11 @@ const PersonalityHero = () => {
         <div className="flex flex-col lg:flex-row gap-16 items-center">
           <div className="w-full lg:w-1/2" data-aos="zoom-in">
             <div className="relative aspect-square max-w-md mx-auto flex items-center justify-center">
-              <div className="absolute inset-0 bg-[#ff7e33]/10 rounded-full animate-spin-slow"></div>
-              <div className="absolute inset-8 border border-dashed border-[#2262b2]/30 rounded-full"></div>
+              <div className="absolute inset-0 bg-[var(--color-secondary)]/10 rounded-full animate-spin-slow"></div>
+              <div className="absolute inset-8 border border-dashed border-[var(--color-primary)]/30 rounded-full"></div>
               <div className="relative text-center p-8">
-                <User size={48} className="text-[#2262b2] mx-auto mb-4" />
-                <h2 className="text-xl font-black uppercase text-[#0a0a0a] dark:text-white">
+                <User size={48} className="text-[var(--color-primary)] mx-auto mb-4" />
+                <h2 className="text-xl font-black uppercase text-[var(--color-dark)] dark:text-white">
                   The Mirror
                 </h2>
                 <p className="text-xs text-gray-400 mt-2 font-medium italic">
@@ -39,8 +39,8 @@ const PersonalityHero = () => {
           </div>
 
           <div className="w-full lg:w-1/2" data-aos="fade-left">
-            <h1 className="text-3xl md:text-5xl font-black text-[#0a0a0a] dark:text-white uppercase mb-8 leading-tight">
-              Personality <span className="text-[#2262b2]">Traits</span>
+            <h1 className="text-3xl md:text-5xl font-black text-[var(--color-dark)] dark:text-white uppercase mb-8 leading-tight">
+              Personality <span className="text-[var(--color-primary)]">Traits</span>
             </h1>
             <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 mb-8 leading-relaxed font-medium">
               Your personality is a complex vibration of vowels and consonants.

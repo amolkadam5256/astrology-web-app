@@ -53,21 +53,21 @@ const Footer = () => {
   return (
     <footer className="relative bg-gray-50 dark:bg-[#050505] border-t border-gray-200 dark:border-white/5 pt-5 pb-5 overflow-hidden">
       {/* Background Decoration */}
-      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-[#2262b2]/5 blur-[120px] pointer-events-none"></div>
-      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-[#2262b2]/5 blur-[120px] pointer-events-none"></div>
+      <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-[var(--color-primary)]/5 blur-[120px] pointer-events-none"></div>
+      <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-[var(--color-primary)]/5 blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-10">
           {/* Brand Column */}
           <div className="lg:col-span-2 space-y-6" data-aos="fade-right">
             <div className="group inline-block">
-              <span className="text-3xl font-black tracking-tighter text-[#0a0a0a] dark:text-white">
+              <span className="text-3xl font-black tracking-tighter text-[var(--color-dark)] dark:text-white">
                 {SITE_DATA.brand.name}
-                <span className="text-[#2262b2]">
+                <span className="text-[var(--color-primary)]">
                   {SITE_DATA.brand.highlight}
                 </span>
               </span>
-              <div className="w-12 h-1 bg-[#2262b2] mt-1 group-hover:w-full transition-all duration-500"></div>
+              <div className="w-12 h-1 bg-[var(--color-primary)] mt-1 group-hover:w-full transition-all duration-500"></div>
             </div>
 
             <p className="text-gray-600 dark:text-gray-400 text-[14px] leading-relaxed max-w-md font-medium">
@@ -76,7 +76,7 @@ const Footer = () => {
 
             <div className="space-y-4">
               <div className="flex items-center space-x-4 group cursor-pointer">
-                <div className="w-10 h-10 flex items-center justify-center bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-[#2262b2] group-hover:bg-[#2262b2] group-hover:text-white transition-all duration-300">
+                <div className="w-10 h-10 flex items-center justify-center bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-[var(--color-primary)] group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all duration-300">
                   <Mail className="w-5 h-5" />
                 </div>
                 <div>
@@ -90,7 +90,7 @@ const Footer = () => {
               </div>
 
               <div className="flex items-center space-x-4 group cursor-pointer">
-                <div className="w-10 h-10 flex items-center justify-center bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-[#2262b2] group-hover:bg-[#2262b2] group-hover:text-white transition-all duration-300">
+                <div className="w-10 h-10 flex items-center justify-center bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-[var(--color-primary)] group-hover:bg-[var(--color-primary)] group-hover:text-white transition-all duration-300">
                   <Phone className="w-5 h-5" />
                 </div>
                 <div>
@@ -108,7 +108,7 @@ const Footer = () => {
           {/* Links Columns */}
           {footerSections.map((section) => (
             <div key={section.title} className="space-y-6">
-              <h4 className="text-[12px] uppercase tracking-[0.3em] font-black text-[#0a0a0a] dark:text-white">
+              <h4 className="text-[12px] uppercase tracking-[0.3em] font-black text-[var(--color-dark)] dark:text-white">
                 {section.title}
               </h4>
               <ul className="space-y-4">
@@ -116,7 +116,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <Link
                       to={link.path}
-                      className="text-gray-500 dark:text-gray-400 hover:text-[#2262b2] dark:hover:text-[#2262b2] transition-colors flex items-center group/link"
+                      className="text-gray-500 dark:text-gray-400 hover:text-[var(--color-primary)] dark:hover:text-[var(--color-primary)] transition-colors flex items-center group/link"
                     >
                       <ArrowRight className="w-3 h-3 mr-2 opacity-0 -ml-5 group-hover/link:opacity-100 group-hover/link:ml-0 transition-all" />
                       {link.name}
@@ -134,16 +134,16 @@ const Footer = () => {
             {/* Newsletter */}
             <div className="w-full lg:w-max space-y-4">
               <h5 className="flex items-center text-sm font-black dark:text-white text-gray-900 uppercase tracking-widest">
-                <Sparkles className="w-4 h-4 mr-3 text-[#2262b2]" />
+                <Sparkles className="w-4 h-4 mr-3 text-[var(--color-primary)]" />
                 Subscribe to Cosmic Updates
               </h5>
               <div className="flex w-full">
                 <input
                   type="email"
                   placeholder="Your cosmic email"
-                  className="w-full lg:w-80 px-5 py-4 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:outline-none focus:border-[#2262b2] transition-colors font-bold text-[13px]"
+                  className="w-full lg:w-80 px-5 py-4 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:outline-none focus:border-[var(--color-primary)] transition-colors font-bold text-[13px]"
                 />
-                <button className="px-8 py-4 bg-[#2262b2] hover:bg-[#1b4f91] text-white font-black text-[13px] transition-all">
+                <button className="px-8 py-4 bg-[var(--color-primary)] hover:bg-[#1b4f91] text-white font-black text-[13px] transition-all">
                   JOIN
                 </button>
               </div>
@@ -165,7 +165,7 @@ const Footer = () => {
                     href={social.url}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="w-12 h-12 flex items-center justify-center bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-400 hover:text-[#2262b2] hover:border-[#2262b2] transition-all duration-300"
+                    className="w-12 h-12 flex items-center justify-center bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 text-gray-400 hover:text-[var(--color-primary)] hover:border-[var(--color-primary)] transition-all duration-300"
                     aria-label={social.name}
                   >
                     <Icon className="w-5 h-5" />
@@ -179,9 +179,9 @@ const Footer = () => {
           <div className="mt-8 flex flex-col md:flex-row justify-between items-center text-[11px] font-black text-gray-400 uppercase tracking-[0.2em] gap-5 text-center">
             <p>
               © {currentYear}{" "}
-              <Link to="/" className="hover:text-[#2262b2] transition-colors">
+              <Link to="/" className="hover:text-[var(--color-primary)] transition-colors">
                 {SITE_DATA.brand.name}
-                <span className="text-[#2262b2]">
+                <span className="text-[var(--color-primary)]">
                   {SITE_DATA.brand.highlight}
                 </span>
               </Link>{" "}
@@ -190,19 +190,19 @@ const Footer = () => {
             <div className="flex items-center space-x-10">
               <a
                 href="/privacy"
-                className="hover:text-[#2262b2] transition-colors"
+                className="hover:text-[var(--color-primary)] transition-colors"
               >
                 Privacy Policy
               </a>
               <a
                 href="/terms"
-                className="hover:text-[#2262b2] transition-colors"
+                className="hover:text-[var(--color-primary)] transition-colors"
               >
                 Terms of Service
               </a>
               <a
                 href="/disclaimer"
-                className="hover:text-[#2262b2] transition-colors"
+                className="hover:text-[var(--color-primary)] transition-colors"
               >
                 Astrology Disclaimer
               </a>

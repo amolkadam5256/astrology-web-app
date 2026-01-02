@@ -18,12 +18,14 @@ const NumerologyHero = () => {
           className="text-center max-w-3xl mx-auto mb-20 space-y-6"
           data-aos="fade-up"
         >
-          <h2 className="text-[12px] uppercase tracking-[0.5em] font-black text-[#2262b2]">
+          <h2 className="text-[12px] uppercase tracking-[0.5em] font-black text-[var(--color-primary)]">
             Science of Numbers
           </h2>
-          <h3 className="text-4xl md:text-5xl font-black text-[#0a0a0a] dark:text-white uppercase tracking-tighter leading-none">
+          <h3 className="text-4xl md:text-5xl font-black text-[var(--color-dark)] dark:text-white uppercase tracking-tighter leading-none">
             Your Life, Decoded by <br />{" "}
-            <span className="text-[#2262b2]">Celestial Mathematics</span>
+            <span className="text-[var(--color-primary)]">
+              Celestial Mathematics
+            </span>
           </h3>
           <p className="text-gray-600 dark:text-gray-400">
             Numerology is not random—it is a 메시지 messages from the universe.

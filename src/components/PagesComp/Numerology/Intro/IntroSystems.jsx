@@ -3,7 +3,7 @@ import { Binary, Compass } from "lucide-react";
 
 const SystemItem = ({ title, desc }) => (
   <div className="group border-b border-gray-100 dark:border-white/5 pb-4 last:border-0">
-    <h5 className="text-sm font-black text-[#0a0a0a] dark:text-white uppercase mb-1 group-hover:text-[#2262b2] transition-colors">
+    <h5 className="text-sm font-black text-[var(--color-dark)] dark:text-white uppercase mb-1 group-hover:text-[var(--color-primary)] transition-colors">
       {title}
     </h5>
     <p className="text-xs text-gray-500 font-medium">{desc}</p>
@@ -17,8 +17,8 @@ const IntroSystems = () => {
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
           {/* Types */}
           <div>
-            <h3 className="text-xl font-black text-[#0a0a0a] dark:text-white uppercase mb-8 flex items-center gap-2">
-              <div className="w-8 h-8 bg-[#ff7e33]/10 text-[#ff7e33] rounded-lg flex items-center justify-center">
+            <h3 className="text-xl font-black text-[var(--color-dark)] dark:text-white uppercase mb-8 flex items-center gap-2">
+              <div className="w-8 h-8 bg-[var(--color-secondary)]/10 text-[var(--color-secondary)] rounded-lg flex items-center justify-center">
                 <Binary size={18} />
               </div>
               Types of Numerology
@@ -45,8 +45,8 @@ const IntroSystems = () => {
 
           {/* Uses */}
           <div>
-            <h3 className="text-xl font-black text-[#0a0a0a] dark:text-white uppercase mb-8 flex items-center gap-2">
-              <div className="w-8 h-8 bg-[#2262b2]/10 text-[#2262b2] rounded-lg flex items-center justify-center">
+            <h3 className="text-xl font-black text-[var(--color-dark)] dark:text-white uppercase mb-8 flex items-center gap-2">
+              <div className="w-8 h-8 bg-[var(--color-primary)]/10 text-[var(--color-primary)] rounded-lg flex items-center justify-center">
                 <Compass size={18} />
               </div>
               Practical Applications
@@ -62,9 +62,9 @@ const IntroSystems = () => {
               ].map((use, i) => (
                 <div
                   key={i}
-                  className="flex items-center space-x-3 p-4 bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-xl hover:border-[#ff7e33] transition-colors"
+                  className="flex items-center space-x-3 p-4 bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-xl hover:border-[var(--color-secondary)] transition-colors"
                 >
-                  <div className="w-1.5 h-1.5 bg-[#ff7e33] rounded-full"></div>
+                  <div className="w-1.5 h-1.5 bg-[var(--color-secondary)] rounded-full"></div>
                   <span className="text-xs sm:text-sm font-bold opacity-80">
                     {use}
                   </span>

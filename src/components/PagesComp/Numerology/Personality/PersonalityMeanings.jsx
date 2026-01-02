@@ -14,25 +14,25 @@ const PersonalityMeanings = () => {
   ];
 
   return (
-    <section className="py-24 bg-gray-50 dark:bg-[#0a0a0a]">
+    <section className="py-24 bg-gray-50 dark:bg-[var(--color-dark)]">
       <div className="max-w-7xl mx-auto px-4">
         <div className="text-center mb-16">
-          <h2 className="text-2xl font-black uppercase text-[#0a0a0a] dark:text-white mb-4">
+          <h2 className="text-2xl font-black uppercase text-[var(--color-dark)] dark:text-white mb-4">
             The Vibration of Numbers
           </h2>
-          <div className="w-20 h-1 bg-[#ff7e33] mx-auto"></div>
+          <div className="w-20 h-1 bg-[var(--color-secondary)] mx-auto"></div>
         </div>
 
         <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 sm:gap-6">
           {numberTraits.map((item, i) => (
             <div
               key={i}
-              className="group p-6 bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl text-center hover:border-[#2262b2] transition-all"
+              className="group p-6 bg-white dark:bg-white/5 border border-gray-100 dark:border-white/10 rounded-2xl text-center hover:border-[var(--color-primary)] transition-all"
             >
-              <div className="text-2xl font-black text-[#2262b2] mb-2 group-hover:scale-125 transition-transform">
+              <div className="text-2xl font-black text-[var(--color-primary)] mb-2 group-hover:scale-125 transition-transform">
                 {item.num}
               </div>
-              <p className="text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-[#ff7e33] mb-3">
+              <p className="text-[10px] sm:text-[11px] font-black uppercase tracking-widest text-[var(--color-secondary)] mb-3">
                 {item.keyword}
               </p>
               <p className="text-[12px] text-gray-400 font-medium leading-tight">

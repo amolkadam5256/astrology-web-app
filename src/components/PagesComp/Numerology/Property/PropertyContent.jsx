@@ -2,11 +2,11 @@ import React from "react";
 import { Sparkles, Home, Car, Shield, Key } from "lucide-react";
 
 const AssetCard = ({ icon, title, desc }) => (
-  <div className="p-6 bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 rounded-2xl group hover:border-[#2262b2] transition-all">
-    <div className="text-[#2262b2] mb-4 group-hover:scale-110 transition-transform origin-left">
+  <div className="p-6 bg-gray-50 dark:bg-white/5 border border-gray-100 dark:border-white/5 rounded-2xl group hover:border-[var(--color-primary)] transition-all">
+    <div className="text-[var(--color-primary)] mb-4 group-hover:scale-110 transition-transform origin-left">
       {icon}
     </div>
-    <h3 className="text-xs sm:text-sm font-black text-[#0a0a0a] dark:text-white uppercase mb-2">
+    <h3 className="text-xs sm:text-sm font-black text-[var(--color-dark)] dark:text-white uppercase mb-2">
       {title}
     </h3>
     <p className="text-[11px] text-gray-400 font-medium leading-normal">
@@ -18,14 +18,14 @@ const AssetCard = ({ icon, title, desc }) => (
 const PropertyContent = () => {
   return (
     <div data-aos="fade-right">
-      <div className="inline-flex items-center space-x-2 text-[#2262b2] mb-6">
+      <div className="inline-flex items-center space-x-2 text-[var(--color-primary)] mb-6">
         <Sparkles size={16} />
         <span className="text-[10px] font-black uppercase tracking-[0.4em]">
           Asset Synchronization
         </span>
       </div>
-      <h1 className="text-3xl md:text-5xl font-black text-[#0a0a0a] dark:text-white uppercase mb-8 tracking-tighter leading-tight">
-        Property <span className="text-[#2262b2]">Alignment</span>
+      <h1 className="text-3xl md:text-5xl font-black text-[var(--color-dark)] dark:text-white uppercase mb-8 tracking-tighter leading-tight">
+        Property <span className="text-[var(--color-primary)]">Alignment</span>
       </h1>
       <p className="text-sm sm:text-base text-gray-500 font-medium leading-relaxed mb-10">
         Whether it's your sanctuary at home, a strategic office space, or your

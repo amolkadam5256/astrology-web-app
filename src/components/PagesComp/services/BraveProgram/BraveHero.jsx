@@ -3,7 +3,7 @@ import React from "react";
 const BraveHero = () => {
   return (
     <div className="relative z-10">
-      <h4 className="text-[#2262b2] font-black uppercase tracking-[0.4em] mb-6">
+      <h4 className="text-[var(--color-primary)] font-black uppercase tracking-[0.4em] mb-6">
         Exclusive Program
       </h4>
       <h1 className="text-5xl md:text-8xl font-black text-white uppercase mb-8 tracking-tighter">

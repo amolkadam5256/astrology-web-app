@@ -2,7 +2,7 @@ import React from "react";
 
 const LifePathPredictor = () => {
   return (
-    <section className="py-20 bg-[#2262b2] text-white overflow-hidden relative">
+    <section className="py-20 bg-[var(--color-primary)] text-white overflow-hidden relative">
       <div className="absolute top-0 right-0 w-64 h-64 bg-white/5 rounded-full -translate-y-1/2 translate-x-1/2"></div>
       <div className="max-w-3xl mx-auto px-4 text-center relative z-10">
         <h2 className="text-2xl font-black uppercase mb-6" data-aos="fade-up">

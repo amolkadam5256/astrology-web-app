@@ -38,18 +38,18 @@ const BlogGrid = () => {
           </div>
           <div className="space-y-4">
             <div className="flex items-center space-x-4 text-[10px] font-black uppercase tracking-widest text-gray-500">
-              <span className="text-[#2262b2]">{post.category}</span>
+              <span className="text-[var(--color-primary)]">{post.category}</span>
               <span className="flex items-center">
                 <Clock className="w-3 h-3 mr-1" /> {post.date}
               </span>
             </div>
-            <h4 className="text-2xl font-black text-[#0a0a0a] dark:text-white leading-tight group-hover:text-[#2262b2] transition-colors">
+            <h4 className="text-2xl font-black text-[var(--color-dark)] dark:text-white leading-tight group-hover:text-[var(--color-primary)] transition-colors">
               {post.title}
             </h4>
             <p className="text-gray-600 dark:text-gray-400 text-sm leading-relaxed">
               {post.excerpt}
             </p>
-            <div className="flex items-center text-[#2262b2] font-black text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform">
+            <div className="flex items-center text-[var(--color-primary)] font-black text-xs uppercase tracking-widest group-hover:translate-x-2 transition-transform">
               Read Article <ArrowRight className="w-4 h-4 ml-2" />
             </div>
           </div>
