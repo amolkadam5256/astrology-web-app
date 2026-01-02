@@ -49,15 +49,15 @@ const Footer = () => {
   ];
 
   return (
-    <footer className="relative bg-gray-50 dark:bg-[#050505] border-t border-gray-200 dark:border-white/5 pt-20 pb-10 overflow-hidden">
+    <footer className="relative bg-gray-50 dark:bg-[#050505] border-t border-gray-200 dark:border-white/5 pt-5 pb-5 overflow-hidden">
       {/* Background Decoration */}
       <div className="absolute top-0 right-0 -translate-y-1/2 translate-x-1/2 w-96 h-96 bg-[#2262b2]/5 blur-[120px] pointer-events-none"></div>
       <div className="absolute bottom-0 left-0 translate-y-1/2 -translate-x-1/2 w-96 h-96 bg-[#2262b2]/5 blur-[120px] pointer-events-none"></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-20">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-12 mb-10">
           {/* Brand Column */}
-          <div className="lg:col-span-2 space-y-8">
+          <div className="lg:col-span-2 space-y-6">
             <div className="group inline-block">
               <span className="text-3xl font-black tracking-tighter text-[#0a0a0a] dark:text-white">
                 Astro<span className="text-[#2262b2]">Guide</span>
@@ -65,7 +65,7 @@ const Footer = () => {
               <div className="w-12 h-1 bg-[#2262b2] mt-1 group-hover:w-full transition-all duration-500"></div>
             </div>
 
-            <p className="text-gray-600 dark:text-gray-400 text-lg leading-relaxed max-w-md font-medium">
+            <p className="text-gray-600 dark:text-gray-400 text-[14px] leading-relaxed max-w-md font-medium">
               Empowering your journey through celestial wisdom. We provide
               ancient Vedic insights for the modern world to help you navigate
               life's most important decisions.
@@ -80,7 +80,7 @@ const Footer = () => {
                   <p className="text-[10px] uppercase tracking-widest font-black text-gray-400">
                     Email Us
                   </p>
-                  <p className="font-bold dark:text-gray-200 text-gray-800">
+                  <p className="font-bold dark:text-gray-200 text-gray-800 text-[14px]">
                     contact@astroguide.com
                   </p>
                 </div>
@@ -94,7 +94,7 @@ const Footer = () => {
                   <p className="text-[10px] uppercase tracking-widest font-black text-gray-400">
                     Call Support
                   </p>
-                  <p className="font-bold dark:text-gray-200 text-gray-800">
+                  <p className="font-bold dark:text-gray-200 text-gray-800 text-[14px]">
                     +1 (800) ASTRO-GUIDE
                   </p>
                 </div>
@@ -104,7 +104,7 @@ const Footer = () => {
 
           {/* Links Columns */}
           {footerSections.map((section) => (
-            <div key={section.title} className="space-y-8">
+            <div key={section.title} className="space-y-6">
               <h4 className="text-[12px] uppercase tracking-[0.3em] font-black text-[#0a0a0a] dark:text-white">
                 {section.title}
               </h4>
@@ -113,7 +113,7 @@ const Footer = () => {
                   <li key={link.name}>
                     <a
                       href={link.path}
-                      className="group flex items-center text-gray-500 dark:text-gray-400 hover:text-[#2262b2] dark:hover:text-white transition-colors text-sm font-bold"
+                      className="group flex items-center text-gray-500 dark:text-gray-400 hover:text-[#2262b2] dark:hover:text-white transition-colors text-[13px] font-bold"
                     >
                       <ArrowRight className="w-0 h-4 mr-0 group-hover:w-4 group-hover:mr-2 transition-all duration-300 opacity-0 group-hover:opacity-100" />
                       {link.name}
@@ -126,7 +126,7 @@ const Footer = () => {
         </div>
 
         {/* Newsletter & Bottom Bar */}
-        <div className="pt-10 border-t border-gray-200 dark:border-white/5">
+        <div className="pt-5 border-t border-gray-200 dark:border-white/5">
           <div className="flex flex-col lg:flex-row justify-between items-center gap-10">
             {/* Newsletter */}
             <div className="w-full lg:w-max space-y-4">
@@ -138,9 +138,9 @@ const Footer = () => {
                 <input
                   type="email"
                   placeholder="Your cosmic email"
-                  className="w-full lg:w-80 px-5 py-4 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:outline-none focus:border-[#2262b2] transition-colors font-bold text-sm"
+                  className="w-full lg:w-80 px-5 py-4 bg-white dark:bg-white/5 border border-gray-200 dark:border-white/10 focus:outline-none focus:border-[#2262b2] transition-colors font-bold text-[13px]"
                 />
-                <button className="px-8 py-4 bg-[#2262b2] hover:bg-[#1b4f91] text-white font-black text-sm transition-all">
+                <button className="px-8 py-4 bg-[#2262b2] hover:bg-[#1b4f91] text-white font-black text-[13px] transition-all">
                   JOIN
                 </button>
               </div>
@@ -167,10 +167,10 @@ const Footer = () => {
           </div>
 
           {/* Copyright */}
-          <div className="mt-20 flex flex-col md:flex-row justify-between items-center text-[11px] font-black text-gray-400 uppercase tracking-[0.2em] gap-5 text-center">
+          <div className="mt-8 flex flex-col md:flex-row justify-between items-center text-[11px] font-black text-gray-400 uppercase tracking-[0.2em] gap-5 text-center">
             <p>
-              © {currentYear} AstroGuide Cosmic Portal. All Celestial rights
-              reserved.
+              © {currentYear} Astro<span className="text-[#2262b2]">Guide</span>{" "}
+              Cosmic Portal. All Celestial rights reserved.
             </p>
             <div className="flex items-center space-x-10">
               <a
